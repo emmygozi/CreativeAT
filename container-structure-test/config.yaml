@@ -1,0 +1,34 @@
+schemaVersion: 2.0.0
+metadataTest:
+  env:
+    - key: PORT
+      value: 3000
+  exposedPorts: ["3000"]
+  # volumes: ["/test"]
+  entrypoint: ["npm", "run", "start" ]
+  # cmd: ["/bin/bash"]
+  workdir: "/usr/node-app"
+  # user: "luke"
+
+fileExistenceTests:
+  - name: 'src directory exists'
+    path: '/usr/node-app/src'
+    shouldExist: true
+  - name: 'data directory exists'
+    path: '/usr/node-app/src/data'
+    shouldExist: true
+  - name: 'utils directory exists'
+    path: '/usr/node-app/src/utils'
+    shouldExist: true
+  - name: 'errorHandler directory exists'
+    path: '/usr/node-app/src/errorHandler'
+    shouldExist: true
+  - name: 'routes directory exists'
+    path: '/usr/node-app/src/routes'
+    shouldExist: true
+  - name: 'test directory exists'
+    path: '/usr/node-app/src/test'
+    shouldExist: true
+  - name: 'interface directory exists'
+    path: '/usr/node-app/src/interface'
+    shouldExist: true
